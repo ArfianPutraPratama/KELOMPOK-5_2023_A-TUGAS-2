@@ -30,3 +30,20 @@ class Peta:
             self.cityList[kota1].append(kota2)  # Menambahkan kota2 ke daftar kota terhubung kota1.
             return True
         return False  # Mengembalikan False jika salah satu atau kedua kota tidak ditemukan.
+
+def hapusJalan(self, kota1, kota2):
+        # Menghapus jalur antara dua kota.
+        if kota1 in self.cityList and kota2 in self.cityList:
+            self.cityList[kota2].remove(kota1)  # Menghapus kota1 dari daftar kota terhubung kota2.
+            self.cityList[kota1].remove(kota2)  # Menghapus kota2 dari daftar kota terhubung kota1.
+            return True
+        return False  # Mengembalikan False jika salah satu atau kedua kota tidak ditemukan.
+
+    def tambahkanJalanKeSemuaKota(self, kota):
+        # Menambahkan jalur dari satu kota ke semua kota lainnya.
+        if kota in self.cityList:
+            for i in self.cityList:
+                if i != kota and kota not in self.cityList[i]:
+                    self.tambahkanJalan(kota, i)  # Menambahkan jalur dari kota ke semua kota lainnya.
+            return True
+        return False  # Mengembalikan False jika kota tidak ditemukan atau sudah terhubung ke semua kota.
