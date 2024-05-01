@@ -68,3 +68,7 @@ for kota in Peta_Indonesia.cityList:
     Peta_Indonesia.tambahkanJalanKeSemuaKota(kota)  # Menambahkan jalur dari setiap kota ke semua kota lainnya.
 
 Peta_Indonesia.printPeta()  # Cetak peta setelah penambahan jalan.
+
+print('------------------------------')
+Peta_Indonesia.hapusKota("Purwodadi")  # Hapus kota Salatiga dari peta.
+Peta_Indonesia.printPeta()  # Cetak peta setelah penghapusan kota.
