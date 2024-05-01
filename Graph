@@ -47,3 +47,24 @@ def hapusJalan(self, kota1, kota2):
                     self.tambahkanJalan(kota, i)  # Menambahkan jalur dari kota ke semua kota lainnya.
             return True
         return False  # Mengembalikan False jika kota tidak ditemukan atau sudah terhubung ke semua kota.
+
+# Penggunaan:
+Peta_Indonesia = Peta()
+Peta_Indonesia.tambahkanKota("Semarang")
+Peta_Indonesia.tambahkanKota("Surakarta") 
+Peta_Indonesia.tambahkanKota("Tegal") 
+Peta_Indonesia.tambahkanKota("Salatiga") 
+Peta_Indonesia.tambahkanKota("Pekalongan")
+Peta_Indonesia.tambahkanKota("Magelang") 
+Peta_Indonesia.tambahkanKota("Wonosobo")
+Peta_Indonesia.tambahkanKota("Purwodadi")
+Peta_Indonesia.tambahkanKota("Temanggung") 
+Peta_Indonesia.tambahkanKota("Sragen") 
+Peta_Indonesia.tambahkanKota("Pemalang") 
+Peta_Indonesia.tambahkanKota("Rembang")
+
+# Tambahkan 12 jalan untuk setiap kota
+for kota in Peta_Indonesia.cityList:
+    Peta_Indonesia.tambahkanJalanKeSemuaKota(kota)  # Menambahkan jalur dari setiap kota ke semua kota lainnya.
+
+Peta_Indonesia.printPeta()  # Cetak peta setelah penambahan jalan.
